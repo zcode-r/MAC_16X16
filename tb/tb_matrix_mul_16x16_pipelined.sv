@@ -100,6 +100,10 @@ module tb_matrix_mul_16x16_pipelined;
 
   // Main Test Sequence
   initial begin
+
+    $dumpfile("dump.vcd"); // Creates the waveform database file
+    $dumpvars(0, tb_matrix_mul_16x16_pipelined); // Dumps all signals in the module
+
     clk      = 0;
     rst_n    = 0;
     valid_in = 0;
