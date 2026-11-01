@@ -90,9 +90,7 @@ Sums the 8 intermediate values from `sum_stage_reg` into the final 32-bit INT32 
 ### Control Pipeline (`valid_pipe`)
 To ensure handshaking integrity, a 3-bit shift register tracks the `valid_in` pulse:
 
-$$
-\text{valid\_pipe} \leftarrow \{\text{valid\_pipe}[1:0], \text{valid\_in}\}
-$$
+valid_pipe <= {valid_pipe[1:0], valid_in};
 
 `valid_out` is driven by `valid_pipe[2]`, guaranteeing that downstream logic only reads `flat_c` when valid computation results have reached Stage 3.
 
